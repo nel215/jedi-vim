@@ -94,6 +94,7 @@ def echo_highlight(msg):
 
 
 try:
+    os.environ.pop('VIRTUAL_ENV', None)  # disable venv for vim-pyenv
     import jedi
 except ImportError as e:
     no_jedi_warning(str(e))
